@@ -1,0 +1,569 @@
+/* ==================================================
+   1. KONFIGURASI DASAR & FONT
+   ================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ==================================================
+   2. HEADER
+   ================================================== */
+header {
+    background: #ADEBB3; 
+    color: #2c5c3a;
+    padding: 40px 0 30px 0;
+    text-align: center;
+    border-bottom: 5px solid #98d2a6;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+header .job-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #3e8055;
+}
+
+.header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px 25px;
+}
+
+.header-contact a, 
+.header-contact span {
+    color: #2c5c3a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.header-contact a:hover {
+    color: #1e5128;
+}
+
+.header-contact i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* ==================================================
+   3. NAVIGASI
+   ================================================== */
+nav {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ADEBB3;
+}
+
+/* ==================================================
+   4. KONTEN UTAMA (CARD & SECTION)
+   ================================================== */
+.content {
+    padding: 20px 0;
+}
+
+.card {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h2 {
+    color: #2c5c3a;
+    border-bottom: 3px solid #ADEBB3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.card h2 i {
+    margin-right: 12px;
+}
+
+/* --- Bagian Tentang Saya --- */
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profile-picture {
+    flex-shrink: 0;
+    width: 180px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 4px solid #ADEBB3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-description {
+    flex-grow: 1;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* --- Bagian Pendidikan --- */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    border-left: 3px solid #ADEBB3;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    border-left: 3px solid transparent;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #ADEBB3;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: -5px;
+}
+
+.timeline-item p {
+    margin-bottom: 10px;
+}
+
+.timeline-item p strong {
+    color: #2c5c3a;
+}
+
+.school-description {
+    color: #555;
+}
+
+.activities-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+/* --- Bagian Pengalaman --- */
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* --- Bagian Keahlian --- */
+.skill-category {
+    margin-bottom: 25px;
+}
+
+.skill-category:last-child {
+    margin-bottom: 0;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #ADEBB3;
+    padding-left: 10px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-item {
+    background: #e9f5e9;
+    color: #2c5c3a;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background-color: #ADEBB3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Bagian Sertifikat --- */
+.training-summary {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.certificate-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.certificate-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-image img:hover {
+    opacity: 0.85;
+}
+
+.certificate-details {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.certificate-details h4 {
+    color: #2c5c3a;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.certificate-details p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* ==================================================
+   STYLE UNTUK SEKSI PAKLARING
+   ================================================== */
+.paklaring-container {
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+.paklaring-header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.paklaring-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.paklaring-header p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.paklaring-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.paklaring-title h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.paklaring-title span {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.paklaring-body p {
+    margin-bottom: 15px;
+}
+
+.paklaring-body table {
+    width: 100%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.paklaring-body table td {
+    padding: 4px 0;
+    vertical-align: top;
+}
+
+.paklaring-body table td:first-child {
+    width: 100px; /* Lebar kolom label */
+}
+
+.paklaring-body table td:nth-child(2) {
+    padding-left: 10px; /* Jarak antara label dan titik dua */
+}
+
+.work-period {
+    margin-top: 20px !important;
+}
+
+/* ==================================================
+   STYLE REVISI UNTUK PAKLARING FOOTER (Rata Kiri Presisi)
+   ================================================== */
+
+/* Atur font khusus untuk KONTEN di dalam seksi Paklaring */
+#paklaring .paklaring-container {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* 1. Jadikan .paklaring-footer sebagai "kanvas" untuk posisi gambar */
+.paklaring-footer {
+    margin-top: 30px;
+    position: relative; /* PENTING: Ini adalah kunci utamanya */
+}
+
+/* 2. Pastikan semua blok teks rata kiri */
+.paklaring-footer .footer-info,
+.paklaring-footer .signature-area,
+.paklaring-footer .paklaring-tembusan {
+    text-align: left;
+}
+
+/* 3. Beri jarak antara "PT. Sumber Alfaria Trijaya Tbk" dengan nama penanda tangan */
+/* Jarak ini juga menjadi ruang untuk gambar tanda tangan */
+.paklaring-footer .footer-info {
+    margin-bottom: 60px; 
+}
+
+/* 4. Atur posisi gambar TTD secara absolut terhadap .paklaring-footer */
+.signature-image {
+    position: absolute;
+    left: -15px;      /* Posisikan gambar di paling kiri */
+    top: 30px;      /* Posisikan gambar secara vertikal di antara info dan nama */
+    width: 250px;   /* Sesuaikan lebar gambar TTD & Cap */
+    height: 100px;   /* Sesuaikan tinggi gambar TTD & Cap */
+    object-fit: contain;
+}
+
+/* 5. Atur teks nama dan jabatan */
+.signature-text p {
+    margin: 0;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.signature-text span {
+    display: block; /* Pastikan jabatan berada di baris baru */
+    font-size: 0.9rem;
+}
+
+.paklaring-tembusan {
+    margin-top: 20px;
+}
+
+/* ==================================================
+   5. MODAL (POP-UP GAMBAR)
+   ================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 60px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* ==================================================
+   6. FOOTER
+   ================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* ==================================================
+   7. MEDIA QUERIES (RESPONSIVE)
+   ================================================== */
+
+/* --- Untuk Tablet dan Perangkat Lebih Kecil (max 768px) --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .header-contact {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-description {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+/* --- Untuk Ponsel (max 480px) --- */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    nav {
+        position: static;
+    }
+    
+    nav a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #444;
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+}
