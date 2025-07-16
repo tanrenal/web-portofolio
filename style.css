@@ -541,7 +541,7 @@ footer {
     }
 
     .profile-description {
-        text-align: justify;
+        text-align: left;
         margin-top: 15px;
     }
 }
