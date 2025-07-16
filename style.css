@@ -541,8 +541,10 @@ footer {
     }
 
     .profile-description {
-        text-align: left;
-        margin-top: 15px;
+        text-align: justify; /* Mengembalikan perataan menjadi rata kanan-kiri */
+        hyphens: auto;      /* Kunci agar teks rapi & tidak berjarak aneh */
+        word-break: break-word; /* Memastikan kata panjang tidak keluar dari kotak */
+        margin-top: 10px;   /* Sedikit menambah jarak dari gambar untuk estetika */
     }
 }
 
