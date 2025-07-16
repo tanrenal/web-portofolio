@@ -328,6 +328,10 @@ nav a:hover {
     background-color: #fdfdfd;
 }
 
+#paklaring .paklaring-container {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .paklaring-header {
     text-align: center;
     border-bottom: 2px solid #333;
@@ -379,56 +383,40 @@ nav a:hover {
 }
 
 .paklaring-body table td:first-child {
-    width: 100px; /* Lebar kolom label */
+    width: 100px;
 }
 
 .paklaring-body table td:nth-child(2) {
-    padding-left: 10px; /* Jarak antara label dan titik dua */
+    padding-left: 10px;
 }
 
 .work-period {
     margin-top: 20px !important;
 }
 
-/* ==================================================
-   STYLE REVISI UNTUK PAKLARING FOOTER (Rata Kiri Presisi)
-   ================================================== */
-
-/* Atur font khusus untuk KONTEN di dalam seksi Paklaring */
-#paklaring .paklaring-container {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* 1. Jadikan .paklaring-footer sebagai "kanvas" untuk posisi gambar */
 .paklaring-footer {
     margin-top: 30px;
-    position: relative; /* PENTING: Ini adalah kunci utamanya */
+    position: relative;
 }
 
-/* 2. Pastikan semua blok teks rata kiri */
 .paklaring-footer .footer-info,
-.paklaring-footer .signature-area,
-.paklaring-footer .paklaring-tembusan {
+.paklaring-footer .signature-area {
     text-align: left;
 }
 
-/* 3. Beri jarak antara "PT. Sumber Alfaria Trijaya Tbk" dengan nama penanda tangan */
-/* Jarak ini juga menjadi ruang untuk gambar tanda tangan */
 .paklaring-footer .footer-info {
     margin-bottom: 60px; 
 }
 
-/* 4. Atur posisi gambar TTD secara absolut terhadap .paklaring-footer */
 .signature-image {
     position: absolute;
-    left: -15px;      /* Posisikan gambar di paling kiri */
-    top: 30px;      /* Posisikan gambar secara vertikal di antara info dan nama */
-    width: 250px;   /* Sesuaikan lebar gambar TTD & Cap */
-    height: 100px;   /* Sesuaikan tinggi gambar TTD & Cap */
+    left: -15px;
+    top: 30px;
+    width: 250px;
+    height: 100px;
     object-fit: contain;
 }
 
-/* 5. Atur teks nama dan jabatan */
 .signature-text p {
     margin: 0;
     font-weight: bold;
@@ -436,16 +424,12 @@ nav a:hover {
 }
 
 .signature-text span {
-    display: block; /* Pastikan jabatan berada di baris baru */
+    display: block;
     font-size: 0.9rem;
 }
 
-.paklaring-tembusan {
-    margin-top: 20px;
-}
-
 /* ==================================================
-   5. MODAL (POP-UP GAMBAR)
+   5. MODAL (POP-UP GAMBAR) - REVISI
    ================================================== */
 .modal {
     display: none;
@@ -540,11 +524,12 @@ footer {
         align-items: center;
     }
 
+    /* ====== KODE REVISI UNTUK PROFIL DI MOBILE ====== */
     .profile-description {
-        text-align: justify; /* Mengembalikan perataan menjadi rata kanan-kiri */
-        hyphens: auto;      /* Kunci agar teks rapi & tidak berjarak aneh */
-        word-break: break-word; /* Memastikan kata panjang tidak keluar dari kotak */
-        margin-top: 10px;   /* Sedikit menambah jarak dari gambar untuk estetika */
+        text-align: justify;
+        hyphens: auto;
+        word-break: break-word;
+        margin-top: 15px;
     }
 }
 
@@ -566,5 +551,9 @@ footer {
     
     nav a:last-child {
         border-bottom: none;
+    }
+    
+    .paklaring-body table {
+        margin-left: 0;
     }
 }
